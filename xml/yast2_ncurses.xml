@@ -4,7 +4,6 @@
   <!ENTITY % entities SYSTEM "entity-decl.ent">
     %entities;
 ]>
-
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.yast.text">
 <!-- ================================================================== -->
  <title>&yast; in Text Mode</title>
@@ -85,8 +84,8 @@
    The following description of the control elements in the &yast; modules
    assumes that all function keys and <keycap function="alt"/> key combinations
    work and are not assigned to different global functions. Read
-   <xref linkend="sec.yast.cli.restricted_keys"/> for information about possible
-   exceptions.
+   <xref linkend="sec.yast.cli.restricted_keys"/> for information about
+   possible exceptions.
   </para>
 
   <variablelist>
@@ -200,14 +199,16 @@
    </mediaobject>
   </figure>
  </sect1>
-
  <sect1 xml:id="sec.yast.cli.key_combination">
   <title>Advanced Key Combinations</title>
-  <para>&yast; in text mode has a set of advanced key combinations.</para>
+
+  <para>
+   &yast; in text mode has a set of advanced key combinations.
+  </para>
+
   <variablelist>
    <varlistentry>
-    <term>
-     <keycombo action="press"><keycap function="shift"/><keycap>F1</keycap></keycombo>
+    <term><keycombo action="press"><keycap function="shift"/><keycap>F1</keycap></keycombo>
     </term>
     <listitem>
      <para>
@@ -216,8 +217,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>
-     <keycombo action="press"><keycap function="shift"/><keycap>F4</keycap></keycombo>
+    <term><keycombo action="press"><keycap function="shift"/><keycap>F4</keycap></keycombo>
     </term>
     <listitem>
      <para>
@@ -226,8 +226,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>
-     <keycombo action="press"><keycap function="control"/><keycap>\</keycap></keycombo>
+    <term><keycombo action="press"><keycap function="control"/><keycap>\</keycap></keycombo>
     </term>
     <listitem>
      <para>
@@ -236,8 +235,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>
-     <keycombo action="press"><keycap function="control"/><keycap>L</keycap></keycombo>
+    <term><keycombo action="press"><keycap function="control"/><keycap>L</keycap></keycombo>
     </term>
     <listitem>
      <para>
@@ -246,9 +244,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>
-     <keycombo action="press"><keycap function="control"/><keycap>D</keycap></keycombo>
-     <keycap>F1</keycap>
+    <term><keycombo action="press"><keycap function="control"/><keycap>D</keycap></keycombo><keycap>F1</keycap>
     </term>
     <listitem>
      <para>
@@ -257,9 +253,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>
-     <keycombo action="press"><keycap function="control"/><keycap>D</keycap></keycombo>
-     <keycombo action="press"><keycap function="shift"/><keycap>D</keycap></keycombo>
+    <term><keycombo action="press"><keycap function="control"/><keycap>D</keycap></keycombo><keycombo action="press"><keycap function="shift"/><keycap>D</keycap></keycombo>
     </term>
     <listitem>
      <para>
@@ -268,9 +262,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>
-     <keycombo action="press"><keycap function="control"/><keycap>D</keycap></keycombo>
-     <keycombo action="press"><keycap function="shift"/><keycap>Y</keycap></keycombo>
+    <term><keycombo action="press"><keycap function="control"/><keycap>D</keycap></keycombo><keycombo action="press"><keycap function="shift"/><keycap>Y</keycap></keycombo>
     </term>
     <listitem>
      <para>
@@ -280,7 +272,6 @@
    </varlistentry>
   </variablelist>
  </sect1>
-
  <sect1 xml:id="sec.yast.cli.restricted_keys">
   <title>Restriction of Key Combinations</title>
 
@@ -326,11 +317,11 @@
     <term>Restriction of Function Keys</term>
     <listitem>
      <para>
-      The function keys (<keycap>F1</keycap> ... <keycap>F12</keycap>) are
-      also used for functions. Certain function keys might be
-      occupied by the terminal and may not be available for &yast;. However,
-      the <keycap function="alt"/> key combinations and function keys should
-      always be fully available on a pure text console.
+      The function keys (<keycap>F1</keycap> ... <keycap>F12</keycap>) are also
+      used for functions. Certain function keys might be occupied by the
+      terminal and may not be available for &yast;. However, the
+      <keycap function="alt"/> key combinations and function keys should always
+      be fully available on a pure text console.
      </para>
     </listitem>
    </varlistentry>
@@ -346,20 +337,6 @@
 
 <screen>&prompt.sudo;yast -h</screen>
 
-  <sect2 xml:id="sec.yast.cli.options.modules">
-   <title>Starting the Individual Modules</title>
-   <para>
-    To save time, the individual &yast; modules can be started directly. To
-    start a module, enter:
-   </para>
-<screen>&prompt.sudo;yast &lt;module_name&gt;</screen>
-   <para>
-    View a list of all module names available on your system with <command>yast
-    -l</command> or <command>yast --list</command>. Start the network module,
-    for example, with <command>yast lan</command>.
-   </para>
-  </sect2>
-
   <sect2 xml:id="sec.yast.cli.options.install">
    <title>Installing Packages from the Command Line</title>
    <para>
@@ -367,16 +344,16 @@
     active installation repositories, you can use the command line option
     <option>-i</option> to install the package:
    </para>
-<screen>&prompt.sudo;yast -i &lt;package_name&gt;</screen>
+<screen>&prompt.sudo;yast <replaceable>-i package_name</replaceable></screen>
    <para>
     or
    </para>
-<screen>&prompt.sudo;yast --install &lt;package_name&gt;</screen>
+<screen>&prompt.sudo;yast --install <replaceable>-i package_name</replaceable></screen>
    <para>
-    <replaceable>PACKAGE_NAME</replaceable> can be a single short package name
-    (for example <systemitem class="resource">gvim</systemitem>) installed with
-    dependency checking, or the full path to an RPM package
-    which is installed without dependency checking.
+    <replaceable>package_name</replaceable> can be a single short package name
+    (for example <package>gvim</package>) installed with dependency checking,
+    or the full path to an RPM package which is installed without dependency
+    checking.
    </para>
    <para>
     If you need a command line based software management utility with
@@ -387,6 +364,20 @@
    </para>
   </sect2>
 
+  <sect2 xml:id="sec.yast.cli.options.modules">
+   <title>Starting the Individual Modules</title>
+   <para>
+    To save time, the individual &yast; modules can be started directly. To
+    start a module, enter:
+   </para>
+<screen>&prompt.sudo;yast <replaceable>module_name</replaceable></screen>
+   <para>
+    View a list of all module names available on your system with <command>yast
+    -l</command> or <command>yast --list</command>. Start the network module,
+    for example, with <command>yast lan</command>.
+   </para>
+  </sect2>
+
   <sect2 xml:id="sec.yast.cli.options.module_params">
    <title>Command Line Parameters of the &yast; Modules</title>
    <para>
@@ -394,13 +385,188 @@
     support for individual modules. Not all modules have command line support.
     To display the available options of a module, enter:
    </para>
-<screen>&prompt.sudo;yast &lt;module_name&gt; help</screen>
+<screen>&prompt.sudo;yast <replaceable>module_name</replaceable> help</screen>
    <para>
-    If a module does not provide command line support, the module is started in
-    text mode and the following message appears:
+    If a module does not provide command line support, it is started in a text
+    mode and the following message appears:
    </para>
 <screen>This &yast; module does not support the command line interface.</screen>
+   <para>
+    The following sections describe all &yast; modules with command line
+    support, together with a brief explanation of all their commands and
+    available options.
+   </para>
+   <sect3>
+    <title>yast add-on</title>
+    <para>
+     Adds a new Add-On product from the specified path:
+    </para>
+<screen>
+ &prompt.sudo;yast add-on http://server.name/directory/Lang-AddOn-CD1/
+</screen>
+    <para>
+     You can use the following protocols to specify the source path: http://
+     ftp:// nfs:// disk:// cd:// or dvd://.
+    </para>
+   </sect3>
+   <sect3>
+    <title>yast disk</title>
+    <para>
+     Prints information about all disks or partitions. The only supported
+     command is <command>list</command> followed by any of the following
+     options:
+    </para>
+    <variablelist>
+     <varlistentry>
+      <term>disks</term>
+      <listitem>
+       <para>
+        Lists all configured disks in the system:
+       </para>
+<screen>
+&prompt.sudo;yast disk list disks
+Device   | Size       | FS Type | Mount Point | Label | Model
+---------+------------+---------+-------------+-------+-------------
+/dev/sda | 119.24 GiB |         |             |       | SSD 840
+/dev/sdb |  60.84 GiB |         |             |       | WD1003FBYX-0
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>partitions</term>
+      <listitem>
+       <para>
+        Lists all partitions in the system:
+       </para>
+<screen>
+&prompt.sudo;yast disk list partitions
+Device         | Size       | FS Type | Mount Point | Label | Model
+---------------+------------+---------+-------------+-------+------
+/dev/sda1      |   1.00 GiB | Ext2    | /boot       |       |
+/dev/sdb1      |   1.00 GiB | Swap    | swap        |       |
+/dev/sdc1      | 698.64 GiB | XFS     | /mnt/extra  |       |
+/dev/vg00/home | 580.50 GiB | Ext3    | /home       |       |
+/dev/vg00/root | 100.00 GiB | Ext3    | /           |       |
+[...]
+</screen>
+      </listitem>
+     </varlistentry>
+    </variablelist>
+   </sect3>
+   <sect3>
+    <title>yast firewall</title>
+    <para>
+     Displays information about the firewall settings. <command>yast
+     firewall</command> accepts the following commands:
+    </para>
+    <variablelist>
+     <varlistentry>
+      <term>broadcast</term>
+      <listitem>
+       <para>
+        Displays settings of broadcast packets.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>disable</term>
+      <listitem>
+       <para>
+        Disables firewall.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>enable</term>
+      <listitem>
+       <para>
+        Enables firewall.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>interfaces</term>
+      <listitem>
+       <para>
+        Displays the configuration related to network interfaces.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>logging</term>
+      <listitem>
+       <para>
+        Displays the logging settings.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>masqredirect</term>
+      <listitem>
+       <para>
+        Redirects requests to masqueraded IP.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>masquerade</term>
+      <listitem>
+       <para>
+        Displays the masquerading settings.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>services</term>
+      <listitem>
+       <para>
+        Displays information about allowed services, ports, and protocols.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>startup</term>
+      <listitem>
+       <para>
+        Displays startup settings.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>summary</term>
+      <listitem>
+       <para>
+        Displays firewall configuration summary.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>zones</term>
+      <listitem>
+       <para>
+        Lists known firewall zones.
+       </para>
+      </listitem>
+     </varlistentry>
+    </variablelist>
+    <tip>
+     <title>Interactive Mode</title>
+     <para>
+      If you need to spend more time querying the firewall settings, run the
+      <emphasis>interactive</emphasis> mode.
+     </para>
+<screen>
+&prompt.sudo;yast firewall interactive
+YaST2 firewall> enable
+</screen>
+     <para>
+      The <literal>YaST2 firewall</literal> shell opens, where you can enter
+      all the <command>yast firewall</command> commands without the
+      <command>sudo yast firewall</command> prefix. To leave the interactive
+      mode, enter <literal>exit</literal>.
+     </para>
+    </tip>
+   </sect3>
   </sect2>
  </sect1>
 </chapter>
-<!-- moved comandline update to yast2.xml -->
