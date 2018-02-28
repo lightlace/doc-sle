@@ -410,6 +410,18 @@
     </para>
    </sect3>
    <sect3>
+    <title>yast audit-laf</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast dhcp-server</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast dns-server</title>
+    <para></para>
+   </sect3>
+   <sect3>
     <title>yast disk</title>
     <para>
      Prints information about all disks or partitions. The only supported
@@ -566,6 +578,127 @@ YaST2 firewall> enable
       mode, enter <literal>exit</literal>.
      </para>
     </tip>
+   </sect3>
+   <sect3>
+    <title>yast ftp-server</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast http-server</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast kdump</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast keyboard</title>
+    <para>
+     Configures the system keyboard for virtual consoles. It does not affect
+     the keyboard settings in graphical desktop environments, such as &gnome;
+     or KDE. <command>yast keyboard</command> accepts the following commands:
+    </para>
+    <variablelist>
+     <varlistentry>
+      <term>list</term>
+      <listitem>
+       <para>
+        Lists all available keyboard layouts.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>set</term>
+      <listitem>
+       <para>
+        Activates new keyboard layout setting:
+       </para>
+<screen>
+&prompt.sudo;yast keyboard set layout=czech
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>summary</term>
+      <listitem>
+       <para>
+        Displays the current keyboard configuration.
+       </para>
+      </listitem>
+     </varlistentry>
+    </variablelist>
+   </sect3>
+   <sect3>
+    <title>yast lan</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast language</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast mail</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast nfs</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast nfs-server</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast nis</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast nis-server</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast proxy</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast rdp</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast rear</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast samba-client</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast samba-server</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast security</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast sound</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast sysconfig</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast tftp-server</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast timezone</title>
+    <para></para>
+   </sect3>
+   <sect3>
+    <title>yast users</title>
+    <para></para>
    </sect3>
   </sect2>
  </sect1>
