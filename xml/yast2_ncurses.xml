@@ -411,15 +411,304 @@
    </sect3>
    <sect3>
     <title>yast audit-laf</title>
-    <para></para>
+    <para>
+     Displays and configures the Linux Audit Framework. Refer to
+     <xref
+      linkend="part.audit"/> for more details. <command>yast
+     audit-laf</command> accepts the following commands:
+    </para>
+    <variablelist>
+     <varlistentry>
+      <term>set</term>
+      <listitem>
+       <para>
+        Sets the specified option:
+       </para>
+<screen>
+&prompt.sudo;yast audit-laf set log_file=/tmp/audit.log
+</screen>
+       <para>
+        For a complete list of options, run <command>yast audit-laf set
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>show</term>
+      <listitem>
+       <para>
+        Displays settings of the specified option:
+       </para>
+<screen>
+&prompt.sudo;yast audit-laf show diskspace
+space_left: 75
+space_left_action: SYSLOG
+admin_space_left: 50
+admin_space_left_action: SUSPEND
+action_mail_acct: root
+disk_full_action: SUSPEND
+disk_error_action: SUSPEND
+</screen>
+       <para>
+        For a complete list of options, run <command>yast audit-laf show
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+    </variablelist>
    </sect3>
    <sect3>
     <title>yast dhcp-server</title>
-    <para></para>
+    <para>
+     Manages the DHCP server and configures its settings. <command>yast
+     dhcp-server</command> accepts the following commands:
+    </para>
+    <variablelist>
+     <varlistentry>
+      <term>disable</term>
+      <listitem>
+       <para>
+        Disables the DHCP server service.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>enable</term>
+      <listitem>
+       <para>
+        Enables the DHCP server service.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>host</term>
+      <listitem>
+       <para>
+        Configure settings for individual hosts.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>interface</term>
+      <listitem>
+       <para>
+        Specifies to which network interface to listen to:
+       </para>
+<screen>
+&prompt.sudo;yast dhcp-server interface current
+Selected Interfaces: eth0
+Other Interfaces: bond0, pbu, eth1
+</screen>
+       <para>
+        For a complete list of options, run <command>yast dhcp-server interface
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>options</term>
+      <listitem>
+       <para>
+        Manages global DHCP options. For a complete list of options, run
+        <command>yast dhcp-server options help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>status</term>
+      <listitem>
+       <para>
+        Prints the status of the DHCP service.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>subnet</term>
+      <listitem>
+       <para>
+        Manages the DHCP subnet options. For a complete list of options, run
+        <command>yast dhcp-server subnet help</command>
+       </para>
+      </listitem>
+     </varlistentry>
+    </variablelist>
    </sect3>
    <sect3>
     <title>yast dns-server</title>
-    <para></para>
+    <para>
+     Manages the DNS server configuration. <command>yast dns-server</command>
+     accepts the following commands:
+    </para>
+    <variablelist>
+     <varlistentry>
+      <term>acls</term>
+      <listitem>
+       <para>
+        Displays access control list settings:
+       </para>
+<screen>
+ &prompt.sudo;yast dns-server acls show
+ ACLs:
+ -----
+  Name       Type        Value
+  ----------------------------
+  any        Predefined
+  localips   Predefined
+  localnets  Predefined
+  none       Predefined
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>dnsrecord</term>
+      <listitem>
+       <para>
+        Configures zone resource records:
+       </para>
+<screen>
+&prompt.sudo;yast dnsrecord add zone=example.org query=office.example.org type=NS value=ns3
+</screen>
+       <para>
+        For a complete list of options, run <command>yast dns-server dnsrecord
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>forwarders</term>
+      <listitem>
+       <para>
+        Configures DNS forwarders:
+       </para>
+<screen>
+&prompt.sudo;yast dns-server forwarders add ip=10.0.0.100
+&prompt.sudo;yast dns-server forwarders show
+[...]
+Forwarder IP
+------------
+10.0.0.100
+</screen>
+       <para>
+        For a complete list of options, run <command>yast dns-server forwarders
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>host</term>
+      <listitem>
+       <para>
+        Handles 'A' and its related 'PTR' record at once:
+       </para>
+<screen>
+&prompt.sudo;yast dns-server host show zone=example.org
+</screen>
+       <para>
+        For a complete list of options, run <command>yast dns-server host
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>logging</term>
+      <listitem>
+       <para>
+        Configures logging settings:
+       </para>
+<screen>
+&prompt.sudo;yast dns-server logging set updates=no transfers=yes
+</screen>
+       <para>
+        For a complete list of options, run <command>yast dns-server logging
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>mailserver</term>
+      <listitem>
+       <para>
+        Configures zone mail servers:
+       </para>
+<screen>
+&prompt.sudo;yast dns-server mailserver add zone=example.org mx=mx1 priority=100
+</screen>
+       <para>
+        For a complete list of options, run <command>yast dns-server mailserver
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>nameserver</term>
+      <listitem>
+       <para>
+        Configures zone name servers:
+       </para>
+<screen>
+&prompt.sudo;yast dns-server nameserver add zone=example.com ns=ns1
+</screen>
+       <para>
+        For a complete list of options, run <command>yast dns-server nameserver
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>soa</term>
+      <listitem>
+       <para>
+        Configures the start of authority (SOA) record:
+       </para>
+<screen>
+&prompt.sudo;yast dns-server soa set zone=example.org serial=2006081623 ttl=2D3H20S
+</screen>
+       <para>
+        For a complete list of options, run <command>yast dns-server soa
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>startup</term>
+      <listitem>
+       <para>
+        Manages the DNS server service:
+       </para>
+<screen>
+&prompt.sudo;yast dns-server startup atboot
+</screen>
+       <para>
+        For a complete list of options, run <command>yast dns-server startup
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>transport</term>
+      <listitem>
+       <para>
+        Configure zone transport rules. For a complete list of options, run
+        <command>yast dns-server transport help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>zones</term>
+      <listitem>
+       <para>
+        Manages DNS zones:
+       </para>
+<screen>
+&prompt.sudo;yast dns-server zones add name=example.org zonetype=master
+</screen>
+       <para>
+        For a complete list of options, run <command>yast dns-server zones
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+    </variablelist>
    </sect3>
    <sect3>
     <title>yast disk</title>
