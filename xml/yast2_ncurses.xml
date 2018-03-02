@@ -870,11 +870,300 @@ YaST2 firewall> enable
    </sect3>
    <sect3>
     <title>yast ftp-server</title>
-    <para></para>
+    <para>
+     Configures FTP server settings. <command>yast ftp-server</command> accepts
+     the following options:
+    </para>
+    <variablelist>
+     <varlistentry>
+      <term>SSL, SSLv2, SSLv3, TLS</term>
+      <listitem>
+       <para>
+        Controls secure connections via SSL up to SSL version 3, and TLS. SSL
+        options are valid for the <systemitem>vsftpd</systemitem> only.
+       </para>
+<screen>
+&prompt.sudo;yast ftp-server SSLv2 enable
+&prompt.sudo;yast ftp-server TLS disable
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>access</term>
+      <listitem>
+       <para>
+        Configures access permissions:
+       </para>
+<screen>
+&prompt.sudo;yast ftp-server access authen_only
+</screen>
+       <para>
+        For a complete list of options, run <command>yast ftp-server access
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>anon_access</term>
+      <listitem>
+       <para>
+        Configures access permissions for anonymous users:
+       </para>
+<screen>
+&prompt.sudo;yast ftp-server anon_access can_upload
+</screen>
+       <para>
+        For a complete list of options, run <command>yast ftp-server
+        anon_access help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>anon_dir</term>
+      <listitem>
+       <para>
+        Specifies the directory for anonymous users. The directory must already
+        exist on the server:
+       </para>
+<screen>
+&prompt.sudo;yast ftp-server anon_dir set_anon_dir=/srv/ftp
+</screen>
+       <para>
+        For a complete list of options, run <command>yast ftp-server anon_dir
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>chroot</term>
+      <listitem>
+       <para>
+        Controls <emphasis>change root</emphasis> environment (chroot):
+       </para>
+<screen>
+&prompt.sudo;yast ftp-server chroot enable
+&prompt.sudo;yast ftp-server chroot disable
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>idle-time</term>
+      <listitem>
+       <para>
+        Sets the maximum idle time in minutes before FTP server terminates the
+        current connection:
+       </para>
+<screen>
+&prompt.sudo;yast ftp-server idle-time set_idle_time=15
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>logging</term>
+      <listitem>
+       <para>
+        Controls whether to save the log messages into a log file:
+       </para>
+<screen>
+&prompt.sudo;yast ftp-server logging enable
+&prompt.sudo;yast ftp-server logging disable
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>max_clients</term>
+      <listitem>
+       <para>
+        Specifies the maximum number of concurrently connected clients:
+       </para>
+<screen>
+&prompt.sudo;yast ftp-server max_clients set_max_clients=1500
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>max_clients_ip</term>
+      <listitem>
+       <para>
+        Specifies the maximum number of concurrently connected clients via IP:
+       </para>
+<screen>
+&prompt.sudo;yast ftp-server max_clients_ip set_max_clients=20
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>max_rate_anon</term>
+      <listitem>
+       <para>
+        Specifies the maximum data transfer rate permitted for anonymous
+        clients (KB/s):
+       </para>
+<screen>
+&prompt.sudo;yast ftp-server max_rate_anon set_max_rate=10000
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>max_rate_authen</term>
+      <listitem>
+       <para>
+        Specifies the maximum data transfer rate permitted for locally
+        authenticated users (KB/s):
+       </para>
+<screen>
+&prompt.sudo;yast ftp-server max_rate_authen set_max_rate=10000
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>port_range</term>
+      <listitem>
+       <para>
+        Specifies the port range for passive connection replies:
+       </para>
+<screen>
+&prompt.sudo;yast ftp-server port_range set_min_port=20000 set_max_port=30000
+</screen>
+       <para>
+        For a complete list of options, run <command>yast help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>show</term>
+      <listitem>
+       <para>
+        Displays FTP server settings.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>startup</term>
+      <listitem>
+       <para>
+        Controls the FTP startup method:
+       </para>
+<screen>
+&prompt.sudo;yast ftp-server startup atboot
+</screen>
+       <para>
+        For a complete list of options, run <command>yast ftp-server startup
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>umask</term>
+      <listitem>
+       <para>
+        Specifies the file umask for <literal>authenticated:anonymous</literal>
+        users:
+       </para>
+<screen>
+&prompt.sudo;yast ftp-server umask set_umask=177:077
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>welcome_message</term>
+      <listitem>
+       <para>
+        Specifies the text to display when someone connects to the FTP server:
+       </para>
+<screen>
+&prompt.sudo;yast ftp-server welcome_message set_message="hello everybody"
+</screen>
+      </listitem>
+     </varlistentry>
+    </variablelist>
    </sect3>
    <sect3>
     <title>yast http-server</title>
-    <para></para>
+    <para>Configures the HTTP server (Apache2). <command>yast
+      http-server</command> accepts the following commands:</para>
+    <variablelist>
+     <varlistentry>
+      <term>configure</term>
+      <listitem>
+       <para>
+        Configures the HTTP server host settings.
+       </para>
+<screen>
+&prompt.sudo;yast http-server configure host=main servername=www.example.com \
+ serveradmin=admin@example.com
+</screen>
+       <para>
+        For a complete list of options, run <command>yast http-server configure help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+    </variablelist>
+    <variablelist>
+     <varlistentry>
+      <term>hosts</term>
+      <listitem>
+       <para>
+        Configures virtual hosts:
+       </para>
+<screen>
+&prompt.sudo;yast http-server hosts create servername=www.example.com \
+ serveradmin=admin@example.com documentroot=/var/www
+</screen>
+       <para>
+        For a complete list of options, run <command>yast http-server hosts help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+    </variablelist>
+    <variablelist>
+     <varlistentry>
+      <term>listen</term>
+      <listitem>
+       <para>
+        
+       </para>
+<screen>
+&prompt.sudo;yast
+</screen>
+       <para>
+        For a complete list of options, run <command>yast help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+    </variablelist>
+    <variablelist>
+     <varlistentry>
+      <term>mode</term>
+      <listitem>
+       <para>
+        
+       </para>
+<screen>
+&prompt.sudo;yast
+</screen>
+       <para>
+        For a complete list of options, run <command>yast help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+    </variablelist>
+    <variablelist>
+     <varlistentry>
+      <term>modules</term>
+      <listitem>
+       <para>
+        
+       </para>
+<screen>
+&prompt.sudo;yast
+</screen>
+       <para>
+        For a complete list of options, run <command>yast help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+    </variablelist>
    </sect3>
    <sect3>
     <title>yast kdump</title>
