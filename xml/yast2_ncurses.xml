@@ -1181,10 +1181,10 @@ Enabled php5
    <sect3>
     <title>yast kdump</title>
     <para>
-     Configures <systemitem>kdump</systemitem> settings. <command>For more
-     information on <systemitem>kdump</systemitem>, refer to
-     <xref linkend="cha.tuning.kdump.basic"/></command>. <command>yast
-     kdump</command> accepts the following commands:
+     Configures <systemitem>kdump</systemitem> settings. For more information
+     on <systemitem>kdump</systemitem>, refer to
+     <xref linkend="cha.tuning.kdump.basic"/>. <command>yast kdump</command>
+     accepts the following commands:
     </para>
     <variablelist>
      <varlistentry>
@@ -1428,7 +1428,63 @@ Numbers of old dumps: 5
    </sect3>
    <sect3>
     <title>yast lan</title>
-    <para></para>
+    <para>
+     Configures network cards. <command>yast lan</command> accepts the
+     following commands:
+    </para>
+    <variablelist>
+     <varlistentry>
+      <term>add</term>
+      <listitem>
+       <para>
+        Configures a new network card:
+       </para>
+<screen>
+&prompt.sudo;yast lan add name=vlan50 ethdevice=eth0 bootproto=dhcp
+</screen>
+       <para>
+        For a complete list of options, run <command>yast lan add
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>delete</term>
+      <listitem>
+       <para>
+        Deletes an existing network card:
+       </para>
+<screen>
+&prompt.sudo;yast lan delete id=0
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>edit</term>
+      <listitem>
+       <para>
+        Change the configuration of an existing network card:
+       </para>
+<screen>
+&prompt.sudo;yast lan edit id=0 bootproto=dhcp
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>list</term>
+      <listitem>
+       <para>
+        Displays a summary of network card configuration:
+       </para>
+<screen>
+&prompt.sudo;yast lan list
+id name,           bootproto
+0 Ethernet Card 0, NONE
+1 Network Bridge,  DHCP
+</screen>
+      </listitem>
+     </varlistentry>
+    </variablelist>
    </sect3>
    <sect3>
     <title>yast language</title>
