@@ -1266,13 +1266,11 @@ Enabled php5
      <varlistentry>
       <term>keepolddumps</term>
       <listitem>
-       <para></para>
+       <para>Specifies how many old dump images are kept. Specify zero to keep
+        them all:</para>
 <screen>
-&prompt.sudo;
+&prompt.sudo;yast kdump keepolddumps no=5
 </screen>
-       <para>
-        For a complete list of options, run <command></command>.
-       </para>
       </listitem>
      </varlistentry>
      <varlistentry>
