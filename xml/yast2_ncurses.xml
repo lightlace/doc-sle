@@ -1254,8 +1254,8 @@ Enabled php5
       <term>immediatereboot</term>
       <listitem>
        <para>
-       Controls whether the system should reboot immediately after saving the
-       core in the kdump kernel:
+        Controls whether the system should reboot immediately after saving the
+        core in the kdump kernel:
        </para>
 <screen>
 &prompt.sudo;yast kdump immediatereboot enable
@@ -1266,8 +1266,10 @@ Enabled php5
      <varlistentry>
       <term>keepolddumps</term>
       <listitem>
-       <para>Specifies how many old dump images are kept. Specify zero to keep
-        them all:</para>
+       <para>
+        Specifies how many old dump images are kept. Specify zero to keep them
+        all:
+       </para>
 <screen>
 &prompt.sudo;yast kdump keepolddumps no=5
 </screen>
@@ -1276,109 +1278,113 @@ Enabled php5
      <varlistentry>
       <term>kernelcommandline</term>
       <listitem>
-       <para></para>
-<screen>
-&prompt.sudo;
-</screen>
        <para>
-        For a complete list of options, run <command></command>.
+        Specifies the command line that needs to be passed off to the kdump
+        kernel:
        </para>
+<screen>
+&prompt.sudo;yast kdump kernelcommandline command="ro root=LABEL=/"
+</screen>
       </listitem>
      </varlistentry>
      <varlistentry>
       <term>kernelcommandlineappend</term>
       <listitem>
-       <para></para>
-<screen>
-&prompt.sudo;
-</screen>
        <para>
-        For a complete list of options, run <command></command>.
+        Specifies the command line that you need to <emphasis>append</emphasis>
+        to the default command line string:
        </para>
+<screen>
+&prompt.sudo;yast kdump kernelcommandlineappend command="ro root=LABEL=/"
+</screen>
       </listitem>
      </varlistentry>
      <varlistentry>
       <term>notificationcc</term>
       <listitem>
-       <para></para>
-<screen>
-&prompt.sudo;
-</screen>
        <para>
-        For a complete list of options, run <command></command>.
+        Specifies an email address for sending copy of notification messages:
        </para>
+<screen>
+&prompt.sudo;yast kdump notificationcc email="user1@example.com user2@example.com"
+</screen>
       </listitem>
      </varlistentry>
      <varlistentry>
       <term>notificationto</term>
       <listitem>
-       <para></para>
-<screen>
-&prompt.sudo;
-</screen>
        <para>
-        For a complete list of options, run <command></command>.
+        Specifies an email address for sending notification messages:
        </para>
+<screen>
+&prompt.sudo;yast kdump notificationto email="user1@example.com user2@example.com"
+</screen>
       </listitem>
      </varlistentry>
      <varlistentry>
       <term>show</term>
       <listitem>
-       <para></para>
-<screen>
-&prompt.sudo;
-</screen>
        <para>
-        For a complete list of options, run <command></command>.
+        Display <systemitem>kdump</systemitem> settings:
        </para>
+<screen>
+&prompt.sudo;yast kdump show
+Kdump is disabled
+Dump Level: 31
+Dump Format: compressed
+Dump Target Settings
+target: file
+file directory: /var/crash
+Kdump immediate reboots: Enabled
+Numbers of old dumps: 5
+</screen>
       </listitem>
      </varlistentry>
      <varlistentry>
       <term>smtppass</term>
       <listitem>
-       <para></para>
-<screen>
-&prompt.sudo;
-</screen>
        <para>
-        For a complete list of options, run <command></command>.
+        Specifies the file with the plain text SMTP password used for sending
+        notification messages:
        </para>
+<screen>
+&prompt.sudo;yast kdump smtppass pass=/path/to/file
+</screen>
       </listitem>
      </varlistentry>
      <varlistentry>
       <term>smtpserver</term>
       <listitem>
-       <para></para>
-<screen>
-&prompt.sudo;
-</screen>
        <para>
-        For a complete list of options, run <command></command>.
+        Specifies the SMTP server host name used for sending notification
+        messages:
        </para>
+<screen>
+&prompt.sudo;yast kdump smtpserver server=smtp.server.com
+</screen>
       </listitem>
      </varlistentry>
      <varlistentry>
       <term>smtpuser</term>
       <listitem>
-       <para></para>
-<screen>
-&prompt.sudo;
-</screen>
        <para>
-        For a complete list of options, run <command></command>.
+        Specifies the SMTP user name used for sending notification messages:
        </para>
+<screen>
+&prompt.sudo;yast kdump smtpuser user=smtp_user
+</screen>
       </listitem>
      </varlistentry>
      <varlistentry>
       <term>startup</term>
       <listitem>
-       <para></para>
-<screen>
-&prompt.sudo;
-</screen>
        <para>
-        For a complete list of options, run <command></command>.
+        Enables or disables start-up options:
        </para>
+<screen>
+&prompt.sudo;yast kdump startup enable alloc_mem=128,256
+&prompt.sudo;yast kdump startup disable
+</screen>
       </listitem>
      </varlistentry>
     </variablelist>
