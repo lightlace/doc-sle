@@ -1488,7 +1488,31 @@ id name,           bootproto
    </sect3>
    <sect3>
     <title>yast language</title>
-    <para></para>
+    <para>
+     Configures system languages. <command>yast language</command> accepts the
+     following cpmands:
+    </para>
+    <variablelist>
+     <varlistentry>
+      <term>list</term>
+      <listitem>
+       <para>
+        Lists all available languages.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>set</term>
+      <listitem>
+       <para>
+        Specifies the main system languages and secondary languages as well:
+       </para>
+<screen>
+&prompt.sudo;yast language set lang=cs_CZ languages=en_US,es_ES no_packages
+</screen>
+      </listitem>
+     </varlistentry>
+    </variablelist>
    </sect3>
    <sect3>
     <title>yast mail</title>
