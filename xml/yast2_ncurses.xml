@@ -1080,8 +1080,10 @@ YaST2 firewall> enable
    </sect3>
    <sect3>
     <title>yast http-server</title>
-    <para>Configures the HTTP server (Apache2). <command>yast
-      http-server</command> accepts the following commands:</para>
+    <para>
+     Configures the HTTP server (Apache2). <command>yast http-server</command>
+     accepts the following commands:
+    </para>
     <variablelist>
      <varlistentry>
       <term>configure</term>
@@ -1094,7 +1096,8 @@ YaST2 firewall> enable
  serveradmin=admin@example.com
 </screen>
        <para>
-        For a complete list of options, run <command>yast http-server configure help</command>.
+        For a complete list of options, run <command>yast http-server configure
+        help</command>.
        </para>
       </listitem>
      </varlistentry>
@@ -1111,7 +1114,8 @@ YaST2 firewall> enable
  serveradmin=admin@example.com documentroot=/var/www
 </screen>
        <para>
-        For a complete list of options, run <command>yast http-server hosts help</command>.
+        For a complete list of options, run <command>yast http-server hosts
+        help</command>.
        </para>
       </listitem>
      </varlistentry>
@@ -1121,13 +1125,21 @@ YaST2 firewall> enable
       <term>listen</term>
       <listitem>
        <para>
-        
+        Specifies the ports and network addresses where the HTTP server should
+        listen:
        </para>
 <screen>
-&prompt.sudo;yast
+&prompt.sudo;yast http-server listen add=81
+&prompt.sudo;yast http-server listen list
+Listen Statements:
+==================
+:80
+:81
+&prompt.sudo;yast http-server delete=80
 </screen>
        <para>
-        For a complete list of options, run <command>yast help</command>.
+        For a complete list of options, run <command>yast http-server listen
+        help</command>.
        </para>
       </listitem>
      </varlistentry>
@@ -1137,14 +1149,11 @@ YaST2 firewall> enable
       <term>mode</term>
       <listitem>
        <para>
-        
+        Enables or disables the wizard mode:
        </para>
 <screen>
-&prompt.sudo;yast
+&prompt.sudo;yast http-server mode wizard=on
 </screen>
-       <para>
-        For a complete list of options, run <command>yast help</command>.
-       </para>
       </listitem>
      </varlistentry>
     </variablelist>
@@ -1153,21 +1162,228 @@ YaST2 firewall> enable
       <term>modules</term>
       <listitem>
        <para>
-        
+        Controls the Apache2 server modules:
        </para>
 <screen>
-&prompt.sudo;yast
+&prompt.sudo;yast http-server modules enable=php5,rewrite
+&prompt.sudo;yast http-server modules disable=ssl
+&prompt.sudo;http-server modules list
+[...]
+Enabled rewrite
+Disabled ssl
+Enabled php5
+[...]
 </screen>
-       <para>
-        For a complete list of options, run <command>yast help</command>.
-       </para>
       </listitem>
      </varlistentry>
     </variablelist>
    </sect3>
    <sect3>
     <title>yast kdump</title>
-    <para></para>
+    <para>
+     Configures <systemitem>kdump</systemitem> settings. <command>For more
+     information on <systemitem>kdump</systemitem>, refer to
+     <xref linkend="cha.tuning.kdump.basic"/></command>. <command>yast
+     kdump</command> accepts the following commands:
+    </para>
+    <variablelist>
+     <varlistentry>
+      <term>copykernel</term>
+      <listitem>
+       <para>
+        Copies the kernel into the dump directory.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>customkernel</term>
+      <listitem>
+       <para>
+        Specifies the <replaceable>kernel_string</replaceable> part of the name
+        of the custom kernel. The naming scheme is
+        <filename>/boot/vmlinu[zx]-<replaceable>kernel_string</replaceable>[.gz]</filename>
+       </para>
+<screen>
+&prompt.sudo;yast kdump copykernel kernel=kdump
+</screen>
+       <para>
+        For a complete list of options, run <command></command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>dumpformat</term>
+      <listitem>
+       <para>
+        Specifies the (compression) format of the dump kernel image. Available
+        formats are 'none', 'ELF', 'compressed', or 'lzo':
+       </para>
+<screen>
+&prompt.sudo;yast kdump dumpformat dump_format=ELF
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>dumplevel</term>
+      <listitem>
+       <para>
+        Specifies the dump level number in the range from 0 to 31:
+       </para>
+<screen>
+&prompt.sudo;yast kdump dumplevel dump_level=24
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>dumptarget</term>
+      <listitem>
+       <para>
+        Specifies the destination for saving dump images:
+       </para>
+<screen>
+&prompt.sudo;kdump dumptarget taget=ssh server=name_server port=22 \
+ dir=/var/log/dump user=user_name
+</screen>
+       <para>
+        For a complete list of options, run <command>yast kdump dumptarget
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>immediatereboot</term>
+      <listitem>
+       <para>
+       Controls whether the system should reboot immediately after saving the
+       core in the kdump kernel:
+       </para>
+<screen>
+&prompt.sudo;yast kdump immediatereboot enable
+&prompt.sudo;yast kdump immediatereboot disable
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>keepolddumps</term>
+      <listitem>
+       <para></para>
+<screen>
+&prompt.sudo;
+</screen>
+       <para>
+        For a complete list of options, run <command></command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>kernelcommandline</term>
+      <listitem>
+       <para></para>
+<screen>
+&prompt.sudo;
+</screen>
+       <para>
+        For a complete list of options, run <command></command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>kernelcommandlineappend</term>
+      <listitem>
+       <para></para>
+<screen>
+&prompt.sudo;
+</screen>
+       <para>
+        For a complete list of options, run <command></command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>notificationcc</term>
+      <listitem>
+       <para></para>
+<screen>
+&prompt.sudo;
+</screen>
+       <para>
+        For a complete list of options, run <command></command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>notificationto</term>
+      <listitem>
+       <para></para>
+<screen>
+&prompt.sudo;
+</screen>
+       <para>
+        For a complete list of options, run <command></command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>show</term>
+      <listitem>
+       <para></para>
+<screen>
+&prompt.sudo;
+</screen>
+       <para>
+        For a complete list of options, run <command></command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>smtppass</term>
+      <listitem>
+       <para></para>
+<screen>
+&prompt.sudo;
+</screen>
+       <para>
+        For a complete list of options, run <command></command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>smtpserver</term>
+      <listitem>
+       <para></para>
+<screen>
+&prompt.sudo;
+</screen>
+       <para>
+        For a complete list of options, run <command></command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>smtpuser</term>
+      <listitem>
+       <para></para>
+<screen>
+&prompt.sudo;
+</screen>
+       <para>
+        For a complete list of options, run <command></command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>startup</term>
+      <listitem>
+       <para></para>
+<screen>
+&prompt.sudo;
+</screen>
+       <para>
+        For a complete list of options, run <command></command>.
+       </para>
+      </listitem>
+     </varlistentry>
+    </variablelist>
    </sect3>
    <sect3>
     <title>yast keyboard</title>
