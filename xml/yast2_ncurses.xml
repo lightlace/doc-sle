@@ -1595,8 +1595,10 @@ nfs.example.com   /home/tux/nfs_share   /nfs/tux       nfs
    </sect3>
    <sect3>
     <title>yast nfs-server</title>
-    <para>Configures the NFS server. <command>yast nfs-server</command> accepts
-     the following commands:</para>
+    <para>
+     Configures the NFS server. <command>yast nfs-server</command> accepts the
+     following commands:
+    </para>
     <variablelist>
      <varlistentry>
       <term>add</term>
@@ -1608,7 +1610,8 @@ nfs.example.com   /home/tux/nfs_share   /nfs/tux       nfs
 &prompt.sudo;yast nfs-server add mountpoint=/nfs/export hosts=*.allowed_hosts.com
 </screen>
        <para>
-        For a complete list of options, run <command>yast nfs-server add help</command>.
+        For a complete list of options, run <command>yast nfs-server add
+        help</command>.
        </para>
       </listitem>
      </varlistentry>
@@ -1633,7 +1636,8 @@ nfs.example.com   /home/tux/nfs_share   /nfs/tux       nfs
 &prompt.sudo;yast nfs-server set enablev4=yes security=yes
 </screen>
        <para>
-        For a complete list of options, run <command>yast nfs-server set help</command>.
+        For a complete list of options, run <command>yast nfs-server set
+        help</command>.
        </para>
       </listitem>
      </varlistentry>
@@ -1682,70 +1686,129 @@ NFS Security using GSS is enabled.
    </sect3>
    <sect3>
     <title>yast nis</title>
-    <para>Configures the NIS client. <command>yast nis</command> accepts the
-     following commands:</para>
-     <varlistentry>
-      <term>configure</term>
-      <listitem>
-       <para>
-        Changes global settings of a NIS client:
-       </para>
+    <para>
+     Configures the NIS client. <command>yast nis</command> accepts the
+     following commands:
+    </para>
+    <varlistentry>
+     <term>configure</term>
+     <listitem>
+      <para>
+       Changes global settings of a NIS client:
+      </para>
 <screen>
 &prompt.sudo;yast nis configure server=nis.example.com broadcast=yes
 </screen>
-       <para>
-        For a complete list of options, run <command>yast nis configure help</command>.
-       </para>
-      </listitem>
-     </varlistentry>
-     <varlistentry>
-      <term>disable</term>
-      <listitem>
-       <para>
-        Disables the NIS client:
-       </para>
+      <para>
+       For a complete list of options, run <command>yast nis configure
+       help</command>.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>disable</term>
+     <listitem>
+      <para>
+       Disables the NIS client:
+      </para>
 <screen>
 &prompt.sudo;yast nis disable
 </screen>
-      </listitem>
-     </varlistentry>
-     <varlistentry>
-      <term>enable</term>
-      <listitem>
-       <para>
-        Enables your machine as NIS client:
-       </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>enable</term>
+     <listitem>
+      <para>
+       Enables your machine as NIS client:
+      </para>
 <screen>
 &prompt.sudo;yast nis enable server=nis.example.com broadcast=yes automounter=yes
 </screen>
-       <para>
-        For a complete list of options, run <command>yast nis enable help</command>.
-       </para>
-      </listitem>
-     </varlistentry>
-     <varlistentry>
-      <term>find</term>
-      <listitem>
-       <para>
-        Shows available NIS servers for a given domain:
-       </para>
+      <para>
+       For a complete list of options, run <command>yast nis enable
+       help</command>.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>find</term>
+     <listitem>
+      <para>
+       Shows available NIS servers for a given domain:
+      </para>
 <screen>
 &prompt.sudo;yast nis find domain=nisdomain.com
 </screen>
-      </listitem>
-     </varlistentry>
-     <varlistentry>
-      <term>summary</term>
-      <listitem>
-       <para>
-        Displays a configuration summary of a NIS client.
-       </para>
-      </listitem>
-     </varlistentry>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>summary</term>
+     <listitem>
+      <para>
+       Displays a configuration summary of a NIS client.
+      </para>
+     </listitem>
+    </varlistentry>
    </sect3>
    <sect3>
     <title>yast nis-server</title>
-    <para></para>
+    <para>
+     Configures a NIS server. <command>yast nis-server</command> accepts the
+     following commands:
+    </para>
+    <varlistentry>
+     <term>master</term>
+     <listitem>
+      <para>
+       Configures a NIS master server:
+      </para>
+<screen>
+&prompt.sudo;yast nis-server master domain=nisdomain.com yppasswd=yes
+</screen>
+      <para>
+       For a complete list of options, run <command>yast nis-server master
+       help</command>.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>slave</term>
+     <listitem>
+      <para>
+       Configures a NIS slave server:
+      </para>
+<screen>
+&prompt.sudo;yast nis-server slave domain=nisdomain.com master_ip=10.100.51.65
+</screen>
+      <para>
+       For a complete list of options, run <command>yast nis-server slave
+       help</command>.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>stop</term>
+     <listitem>
+      <para>
+       Stops a NIS serverL
+      </para>
+<screen>
+&prompt.sudo;yast nis-server stop
+</screen>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>summary</term>
+     <listitem>
+      <para>
+       Displays a configuration summary of a NIS server:
+      </para>
+<screen>
+&prompt.sudo;yast nis-server summary
+</screen>
+     </listitem>
+    </varlistentry>
    </sect3>
    <sect3>
     <title>yast proxy</title>
