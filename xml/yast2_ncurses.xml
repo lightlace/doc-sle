@@ -1682,7 +1682,66 @@ NFS Security using GSS is enabled.
    </sect3>
    <sect3>
     <title>yast nis</title>
-    <para></para>
+    <para>Configures the NIS client. <command>yast nis</command> accepts the
+     following commands:</para>
+     <varlistentry>
+      <term>configure</term>
+      <listitem>
+       <para>
+        Changes global settings of a NIS client:
+       </para>
+<screen>
+&prompt.sudo;yast nis configure server=nis.example.com broadcast=yes
+</screen>
+       <para>
+        For a complete list of options, run <command>yast nis configure help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>disable</term>
+      <listitem>
+       <para>
+        Disables the NIS client:
+       </para>
+<screen>
+&prompt.sudo;yast nis disable
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>enable</term>
+      <listitem>
+       <para>
+        Enables your machine as NIS client:
+       </para>
+<screen>
+&prompt.sudo;yast nis enable server=nis.example.com broadcast=yes automounter=yes
+</screen>
+       <para>
+        For a complete list of options, run <command>yast nis enable help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>find</term>
+      <listitem>
+       <para>
+        Shows available NIS servers for a given domain:
+       </para>
+<screen>
+&prompt.sudo;yast nis find domain=nisdomain.com
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>summary</term>
+      <listitem>
+       <para>
+        Displays a configuration summary of a NIS client.
+       </para>
+      </listitem>
+     </varlistentry>
    </sect3>
    <sect3>
     <title>yast nis-server</title>
