@@ -1794,7 +1794,7 @@ NFS Security using GSS is enabled.
       <term>stop</term>
       <listitem>
        <para>
-        Stops a NIS serverL
+        Stops a NIS server:
        </para>
 <screen>
 &prompt.sudo;yast nis-server stop
@@ -1816,7 +1816,58 @@ NFS Security using GSS is enabled.
    </sect3>
    <sect3>
     <title>yast proxy</title>
-    <para></para>
+    <para>
+     Configures proxy settings. <command>yast proxy</command> accepts the
+     following commands:
+    </para>
+    <variablelist>
+     <varlistentry>
+      <term>authentication</term>
+      <listitem>
+       <para>
+        Specifies the authentication options for proxy:
+       </para>
+<screen>
+&prompt.sudo;yast proxy authentication username=tux password=secret
+</screen>
+       <para>
+        For a complete list of options, run <command>yast proxy authentication
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>enable, disable</term>
+      <listitem>
+       <para>
+        Enables or disable proxy settings.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>set</term>
+      <listitem>
+       <para>
+        Changes the current proxy settings:
+       </para>
+<screen>
+&prompt.sudo;yast proxy set https=proxy.example.com
+</screen>
+       <para>
+        For a complete list of options, run <command>yast proxy set
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>summary</term>
+      <listitem>
+       <para>
+        Displays proxy settings.
+       </para>
+      </listitem>
+     </varlistentry>
+    </variablelist>
    </sect3>
    <sect3>
     <title>yast rdp</title>
