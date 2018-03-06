@@ -1516,15 +1516,169 @@ id name,           bootproto
    </sect3>
    <sect3>
     <title>yast mail</title>
-    <para></para>
+    <para>
+     Displays the configuration of the mail system:
+    </para>
+<screen>
+&prompt.sudo;yast mail summary
+</screen>
    </sect3>
    <sect3>
     <title>yast nfs</title>
-    <para></para>
+    <para>
+     Controls the NFS client. <command>yast nfs</command> accepts the following
+     commands:
+    </para>
+    <variablelist>
+     <varlistentry>
+      <term>add</term>
+      <listitem>
+       <para>
+        Adds a new NFS mount:
+       </para>
+<screen>
+&prompt.sudo;yast nfs add spec=remote_host:/path/to/nfs/share file=/local/mount/point
+</screen>
+       <para>
+        For a complete list of options, run <command>yast nfs add
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>delete</term>
+      <listitem>
+       <para>
+        Deletes an existing NFS mount:
+       </para>
+<screen>
+&prompt.sudo;yast nfs delete spec=remote_host:/path/to/nfs/share file=/local/mount/point
+</screen>
+       <para>
+        For a complete list of options, run <command>yast nfs delete
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>edit</term>
+      <listitem>
+       <para>
+        Changes an existing NFS mount:
+       </para>
+<screen>
+&prompt.sudo;yast nfs edit spec=remote_host:/path/to/nfs/share \
+ file=/local/mount/point type=nfs4
+</screen>
+       <para>
+        For a complete list of options, run <command>yast nfs edit
+        help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>list</term>
+      <listitem>
+       <para>
+        Lists existing NFS mounts:
+       </para>
+<screen>
+&prompt.sudo;yast nfs list
+Server            Remote File System    Mount Point    Options
+----------------------------------------------------------------
+nfs.example.com   /mnt                  /nfs/mnt       nfs
+nfs.example.com   /home/tux/nfs_share   /nfs/tux       nfs
+</screen>
+      </listitem>
+     </varlistentry>
+    </variablelist>
    </sect3>
    <sect3>
     <title>yast nfs-server</title>
-    <para></para>
+    <para>Configures the NFS server. <command>yast nfs-server</command> accepts
+     the following commands:</para>
+    <variablelist>
+     <varlistentry>
+      <term>add</term>
+      <listitem>
+       <para>
+        Adds a directory to export:
+       </para>
+<screen>
+&prompt.sudo;yast nfs-server add mountpoint=/nfs/export hosts=*.allowed_hosts.com
+</screen>
+       <para>
+        For a complete list of options, run <command>yast nfs-server add help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>delete</term>
+      <listitem>
+       <para>
+        Deletes a directory from the NFS export:
+       </para>
+<screen>
+ &prompt.sudo;yast nfs-server delete mountpoint=/nfs/export
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>set</term>
+      <listitem>
+       <para>
+        Specifies additional parameters for the NFS server:
+       </para>
+<screen>
+&prompt.sudo;yast nfs-server set enablev4=yes security=yes
+</screen>
+       <para>
+        For a complete list of options, run <command>yast nfs-server set help</command>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>start</term>
+      <listitem>
+       <para>
+        Starts the NFS server service:
+       </para>
+<screen>
+&prompt.sudo;yast nfs-server start
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>stop</term>
+      <listitem>
+       <para>
+        Stops the NFS server service:
+       </para>
+<screen>
+&prompt.sudo;yast nfs-server stop
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>summary</term>
+      <listitem>
+       <para>
+        Displays a summary of the NFS server configuration:
+       </para>
+<screen>
+&prompt.sudo;yast nfs-server summary
+NFS server is enabled
+NFS Exports
+* /mnt
+* /home
+
+NFSv4 support is enabled.
+The NFSv4 domain for idmapping is localdomain.
+NFS Security using GSS is enabled.
+</screen>
+      </listitem>
+     </varlistentry>
+    </variablelist>
    </sect3>
    <sect3>
     <title>yast nis</title>
