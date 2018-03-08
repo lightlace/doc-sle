@@ -1871,15 +1871,92 @@ NFS Security using GSS is enabled.
    </sect3>
    <sect3>
     <title>yast rdp</title>
-    <para></para>
+    <para>
+     Controls remote desktop settings. <command>yast rdp</command> accepts the
+     following commands:
+    </para>
+    <variablelist>
+     <varlistentry>
+      <term>allow</term>
+      <listitem>
+       <para>
+        Allows remote access to the server's desktop:
+       </para>
+<screen>
+&prompt.sudo;yast rdp allow set=yes
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>list</term>
+      <listitem>
+       <para>
+        Displays the remote desktop configuration summary.
+       </para>
+      </listitem>
+     </varlistentry>
+    </variablelist>
    </sect3>
+<!-- 2018-03-08 tbazant: not sure what this does
    <sect3>
     <title>yast rear</title>
     <para></para>
    </sect3>
+   -->
    <sect3>
     <title>yast samba-client</title>
-    <para></para>
+    <para>
+     Configures the Samba client settings. <command>yast samba-client</command>
+     accepts the following commands:
+    </para>
+    <variablelist>
+     <varlistentry>
+      <term>configure</term>
+      <listitem>
+       <para>
+        Changes global settings of Samba:
+       </para>
+<screen>
+&prompt.sudo;yast samba-client configure workgroup=FAMILY
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>isdomainmember</term>
+      <listitem>
+       <para>
+        Verifies if the machine is a member of a domain:
+       </para>
+<screen>
+&prompt.sudo;yast samba-client isdomainmember domain=SMB_DOMAIN
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>joindomain</term>
+      <listitem>
+       <para>
+        Makes the machine a member of a domain:
+       </para>
+<screen>
+&prompt.sudo;yast samba-client joindomain domain=SMB_DOMAIN user=username password=pwd
+</screen>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>winbind</term>
+      <listitem>
+       <para>
+        Enables or disables Winbind services (the
+        <systemitem>winbindd</systemitem> daemon):
+       </para>
+<screen>
+&prompt.sudo;yast samba-client winbind enable
+&prompt.sudo;yast samba-client winbind disable
+</screen>
+      </listitem>
+     </varlistentry>
+    </variablelist>
    </sect3>
    <sect3>
     <title>yast samba-server</title>
